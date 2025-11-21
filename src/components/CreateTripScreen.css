@@ -1,0 +1,90 @@
+/* CreateTripScreen.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+.create-trip-screen {
+  font-family: 'Poppins', sans-serif;
+}
+
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  transform: scale(1.02);
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-blue-700 {
+  color: #1e40af;
+}
+
+.bg-blue-700 {
+  background-color: #1e40af;
+}
+
+.hover\:bg-blue-800:hover {
+  background-color: #1e3a8a;
+}
+
+.text-orange-500 {
+  color: #f97316;
+}
+
+.bg-orange-500 {
+  background-color: #f97316;
+}
+
+.hover\:bg-orange-600:hover {
+  background-color: #ea580c;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+  }
+
+  .p-6 {
+    padding: 16px;
+  }
+
+  .w-24 {
+    width: 80px;
+  }
+
+  .h-24 {
+    height: 80px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+
+  .w-24 {
+    width: 100px;
+  }
+
+  .h-24 {
+    height: 100px;
+  }
+}

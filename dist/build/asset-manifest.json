@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.334d5dd6.css",
+    "main.js": "/static/js/main.fd5d4151.js",
+    "static/js/453.bda0c3f5.chunk.js": "/static/js/453.bda0c3f5.chunk.js",
+    "static/media/traveller.gif": "/static/media/traveller.c851b491bfad3484f7ab.gif",
+    "static/media/safar-sathi2.png": "/static/media/safar-sathi2.0f0eaa2ab2d485263715.png",
+    "static/media/profilePic.png": "/static/media/profilePic.d82bd2d009191d971f94.png",
+    "static/media/profile_cover.jpg": "/static/media/profile_cover.a01feef2a3771c3481fe.jpg",
+    "index.html": "/index.html",
+    "main.334d5dd6.css.map": "/static/css/main.334d5dd6.css.map",
+    "main.fd5d4151.js.map": "/static/js/main.fd5d4151.js.map",
+    "453.bda0c3f5.chunk.js.map": "/static/js/453.bda0c3f5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.334d5dd6.css",
+    "static/js/main.fd5d4151.js"
+  ]
+}

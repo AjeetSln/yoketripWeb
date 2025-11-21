@@ -1,43 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/loadingIcon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>YokeTrip - Find Your Travel Partner, Volunteer Yatra & Ecotourism</title>
+  <meta name="title" content="YokeTrip - Find Your Travel Partner, Volunteer Yatra & Ecotourism">
+  <meta name="description" content="YokeTrip helps you find travel partners, guides, volunteer yatra opportunities, and ecotourism adventures worldwide. Explore tours, trips, and sustainable travel experiences with YokeTrip.">
+  <meta name="keywords" content="YokeTrip, travel partner, tours, trips, travel planning, adventure, holiday, vacation, tourism, backpacking, explore, travel guide, volunteer yatra, ecotourism, sustainable travel, nature tours">
+  <meta name="author" content="YokeTrip">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yoketrip.com/">
+  <meta property="og:title" content="YokeTrip - Travel Partner, Volunteer Yatra & Ecotourism">
+  <meta property="og:description" content="Connect with travel partners, guides, and join volunteer yatras. Discover ecotourism and sustainable travel adventures with YokeTrip.">
+  <meta property="og:image" content="%PUBLIC_URL%/loadingIcon.png">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yoketrip.com/">
+  <meta property="twitter:title" content="YokeTrip - Travel Partner, Volunteer Yatra & Ecotourism">
+  <meta property="twitter:description" content="Join YokeTrip for travel partners, guides, volunteer yatras, and eco-friendly tourism experiences worldwide.">
+  <meta property="twitter:image" content="%PUBLIC_URL%/loadingIcon.png">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/loadingIcon.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Disable Inspect Only -->
+  <script>
+    // Disable right click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.key === 'U')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable developer tools opening
+    function disableDevTools() {
+      if (typeof window.devtools !== 'undefined') {
+        window.location.reload();
+      }
+    }
+
+    // Check for devtools periodically
+    setInterval(disableDevTools, 1000);
+  </script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- Additional protection script -->
+  <script>
+    // Prevent opening developer tools
+    (function() {
+      var devtools = {
+        open: false,
+        orientation: null
+      };
+      var threshold = 160;
+      var emitEvent = function(state, orientation) {
+        window.dispatchEvent(new CustomEvent('devtoolschange', {
+          detail: {
+            open: state,
+            orientation: orientation
+          }
+        }));
+      };
+      
+      setInterval(function() {
+        var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        var orientation = widthThreshold ? 'vertical' : 'horizontal';
+        
+        if (!(heightThreshold && widthThreshold) &&
+          ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+          if (!devtools.open || devtools.orientation !== orientation) {
+            emitEvent(true, orientation);
+          }
+          devtools.open = true;
+          devtools.orientation = orientation;
+          window.location.reload();
+        } else {
+          if (devtools.open) {
+            emitEvent(false, null);
+          }
+          devtools.open = false;
+          devtools.orientation = null;
+        }
+      }, 500);
+    })();
+
+    // Disable console methods
+    if (typeof console !== "undefined") {
+      console.log = function() {};
+      console.warn = function() {};
+      console.error = function() {};
+      console.info = function() {};
+      console.debug = function() {};
+      console.table = function() {};
+      console.clear = function() {};
+    }
+  </script>
+</body>
 </html>

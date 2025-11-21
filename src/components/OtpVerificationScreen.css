@@ -1,0 +1,323 @@
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #1e40af;
+  --secondary: #1f2937;
+  --accent: #f43f5e;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --light-gray: #d1d5db;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --radius: 16px;
+  --transition: all 0.3s ease-in-out;
+}
+
+.otp-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.otp-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid var(--light-gray);
+  animation: scaleIn 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  pointer-events: auto;
+}
+
+.form::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 0.6s ease-out;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 0.6s ease-out 0.2s both;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle .font-bold {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.error-message {
+  background: rgba(244, 63, 94, 0.15);
+  color: #dc2626;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: shake 0.4s ease-in-out;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.relative {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--gray);
+  font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  border-radius: 50px;
+  border: 2px solid var(--light-gray);
+  background: var(--white);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  animation: slideInUp 0.5s ease-out;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+  outline: none;
+}
+
+.input:hover {
+  border-color: var(--primary);
+}
+
+.verify-button {
+  width: 100%;
+  max-width: 180px;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.verify-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.verify-button:hover:not(.disabled)::before {
+  left: 100%;
+}
+
+.verify-button:hover:not(.disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.verify-button.disabled {
+  background: var(--gray);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.resend-button {
+  font-size: 0.9rem;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.resend-button:hover:not(.disabled) {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.resend-button.disabled {
+  color: var(--gray);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: auto;
+  color: var(--white);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .form {
+    max-width: 360px;
+    padding: 2rem;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .input {
+    padding: 0.7rem 0.9rem 0.7rem 2.8rem;
+    font-size: 0.9rem;
+  }
+  .verify-button {
+    max-width: 160px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    max-width: 320px;
+    padding: 1.8rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .input {
+    padding: 0.6rem 0.8rem 0.6rem 2.5rem;
+    font-size: 0.85rem;
+  }
+  .input-icon {
+    font-size: 1.2rem;
+  }
+  .verify-button {
+    max-width: 140px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .resend-button {
+    font-size: 0.85rem;
+  }
+}

@@ -1,3 +1,38 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /otp-verification/
+Disallow: /user-profile/
+Disallow: /edit-profile/
+Disallow: /userchat/
+Disallow: /kyc-verification/
+Disallow: /wallet/
+Disallow: /transaction-history/
+Disallow: /subscription/
+Disallow: /profile/
+Disallow: /user-profile/
+Disallow: /create-trip/
+Disallow: /trip-bookings/
+Disallow: /blog/
+Disallow: /your-trips/
+Disallow: /edit-trip/
+Disallow: /vacation-spot-detail/
+Disallow: /add-vacation-spot/
+Disallow: /my-services/
+Disallow: /vacation-booking-detail/
+Disallow: /guide-dashboard/
+Disallow: /guide-booking-requests/
+Disallow: /referral/
+Disallow: /explore/
+Disallow: /settings/
+
+# सिर्फ ये 7 Routes ALLOW करें
+Allow: /
+Allow: /login/
+Allow: /register/
+Allow: /find-travel-partner/
+Allow: /find-guide/
+Allow: /travel-blog/
+Allow: /about/
+
+
+Sitemap: https://yoketrip.com/sitemap.xml
